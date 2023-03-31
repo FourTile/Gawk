@@ -1,11 +1,16 @@
+// dont initilize here...
+Sprite s;
 
-// this runce once at the statr, like pre-code
+
+// this runs once at the start, like pre-code
 void setup(){
     size(800, 600); // window size, 800 wide, 600 tall
+    s = new Sprite(width/2, height/2, 50, 50);
 }
 
 // always runs at speed of framerate
 void draw(){
-    // a circle that follows the mouse, 50*50
-    ellipse(mouseX, mouseY, 50, 50);
+
+    s.update();
+    s.display();
 }
