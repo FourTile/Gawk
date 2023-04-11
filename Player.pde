@@ -32,15 +32,19 @@ class Player extends Sprite {
 
         if (pos.x < 0 + size.x/2){
             pos.x = size.x/2;
+            vel.x = 0;
         }
         if(pos.x > width - size.x/2){
             pos.x = width - size.x/2;
+            vel.x = 0;
         }
         if(pos.y < 0 + size.y/2) {
             pos.y = size.y/2;
+            vel.y = 0;
         }
         if(pos.y > height - size.y/2){
             pos.y = height-size.y/2;
+            vel.y = 0;
         }
     }
     void keyUp() {
