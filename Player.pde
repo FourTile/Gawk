@@ -29,6 +29,19 @@ class Player extends Sprite {
         pos.add(vel);
         // always try to decelerate
         vel.mult(0.9);
+
+        if (pos.x < 0 + size.x/2){
+            pos.x = size.x/2;
+        }
+        if(pos.x > width - size.x/2){
+            pos.x = width - size.x/2;
+        }
+        if(pos.y < 0 + size.y/2) {
+            pos.y = size.y/2;
+        }
+        if(pos.y > height - size.y/2){
+            pos.y = height-size.y/2;
+        }
     }
     void keyUp() {
         switch(key) { // key is a global value
