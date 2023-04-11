@@ -28,7 +28,7 @@ class Player extends Sprite {
         // update the position by velocity
         pos.add(vel);
         // always try to decelerate
-        vel.mult(0.9);
+        vel.mult(0.95);
 
         if (pos.x < 0 + size.x/2){
             pos.x = size.x/2;
