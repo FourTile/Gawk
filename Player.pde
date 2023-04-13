@@ -1,5 +1,5 @@
 class Player extends Sprite {
-    boolean left, right, up, down;
+    boolean left, right, up, down, space;
     
     Player(float x, float y) {
         // super refers to the parent
@@ -13,11 +13,12 @@ class Player extends Sprite {
         fill(70,0,70);
         ellipse(pos.x, pos.y, size.x, size.y);
     }
-
+/*
     @Override
     void handleCollision(){
         //dont die
     }
+*/
     @Override
     void update() {
         float speed = 1.2;
@@ -69,6 +70,10 @@ class Player extends Sprite {
             case 'D' : right = true; break;
             case 'w':
             case 'W' : up = true; break;
+            case ' ' : fire(); break;
         }
+    }
+    void fire() {
+        _SM.spawn(new Bullet(pos.x, pos.y, new PVector(0 + vel.x, -10 + vel.y), team));
     }
 }
