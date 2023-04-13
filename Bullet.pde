@@ -11,6 +11,12 @@ class Bullet extends Sprite {
         this(pos.x, pos.y, vel, team); // invoke another own constructor
         // this refers to the above on line 3
     }
+
+    @Override
+    void display(){
+        fill(255);
+        ellipse(pos.x, pos.y, size.x, size.y);
+    }
     
     @Override
     void update() {

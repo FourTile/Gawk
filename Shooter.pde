@@ -8,6 +8,12 @@ class Shooter extends Invader {
     }
 
     @Override
+    void display(){
+        fill(200,200, 255);
+        ellipse(pos.x, pos.y, size.x, size.y);
+    }
+
+    @Override
     void update() {
         super.update();
         PVector aim = new PVector(_SM.player.pos.x - this.pos.x, _SM.player.pos.y - this.pos.y);

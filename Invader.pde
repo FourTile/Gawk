@@ -1,4 +1,3 @@
-
 class Invader extends Sprite {
     
     // constructor
