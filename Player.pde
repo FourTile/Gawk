@@ -1,5 +1,6 @@
 class Player extends Sprite {
     boolean left, right, up, down, space;
+    int health = 3;
     
     Player(float x, float y) {
         // super refers to the parent
@@ -12,13 +13,19 @@ class Player extends Sprite {
     void display(){
         fill(70,0,70);
         ellipse(pos.x, pos.y, size.x, size.y);
+        textSize(44);
+        fill(255,255,255);
+        text("lives: " + health, 850, 50); 
     }
-/*
+
     @Override
     void handleCollision(){
-        //dont die
+        health --;
+        if(health == 0){
+            _SM.destroy(this);
+        }
     }
-*/
+
     @Override
     void update() {
         float speed = 1.2;
